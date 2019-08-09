@@ -4,17 +4,25 @@ import { css, withStyles } from "../withStyles";
 
 const icons = [
   { name: "twitter", href: "" },
-  { name: "linkedin", href: "" },
-  { name: "github", href: "" },
-  { name: "facebook", href: "" },
-  { name: "instagram", href: "" }
+  {
+    name: "linkedin",
+    href: "https://www.linkedin.com/in/stephen-dorn-149055a3/"
+  },
+  { name: "github", href: "https://github.com/svdorn" },
+  { name: "facebook", href: "https://www.facebook.com/stephen.dorn.1" },
+  { name: "instagram", href: "https://www.instagram.com/stephen.dorn/" }
 ];
 
 function Social({ styles }) {
   return (
     <div {...css(styles.container)}>
       {icons.map(icon => (
-        <a {...css(styles.image)} href={icon.href} key={icon.name}>
+        <a
+          {...css(styles.image)}
+          href={icon.href}
+          target="_blank"
+          key={icon.name}
+        >
           <img src={`/images/social/${icon.name}.png`} alt={icon.name} />
         </a>
       ))}
