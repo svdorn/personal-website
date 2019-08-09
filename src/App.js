@@ -32,6 +32,7 @@ App.propTypes = {
 export default withStyles(() => ({
   container: {
     textAlign: "center",
-    padding: "50px 0"
+    padding: "50px 0",
+    font: "15px intercom-text,system-ui"
   }
 }))(App);

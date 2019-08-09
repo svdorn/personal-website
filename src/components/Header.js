@@ -72,20 +72,25 @@ export default withRouter(
     },
 
     menu_items: {
-      display: "inline-block",
+      display: "flex",
       float: "right",
       marginTop: "20px"
     },
 
     menu_item: {
-      margin: "auto 15px",
+      padding: "0 15px",
       textDecoration: "none",
+      textAlign: "left",
       color: "black",
-      fontWeight: "400"
+      fontWeight: "600",
+      opacity: "0.6",
+      ":hover": {
+        opacity: "0.8"
+      }
     },
 
     link_bold: {
-      fontWeight: "700"
+      fontWeight: "800"
     }
   }))(Header)
 );

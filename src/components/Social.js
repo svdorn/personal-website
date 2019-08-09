@@ -10,7 +10,8 @@ const icons = [
   },
   { name: "github", href: "https://github.com/svdorn" },
   { name: "facebook", href: "https://www.facebook.com/stephen.dorn.1" },
-  { name: "instagram", href: "https://www.instagram.com/stephen.dorn/" }
+  { name: "instagram", href: "https://www.instagram.com/stephen.dorn/" },
+  { name: "email", href: "mailto:steve@moonshotinsights.com" }
 ];
 
 function Social({ styles }) {
