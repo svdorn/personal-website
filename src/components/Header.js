@@ -67,14 +67,14 @@ export default withRouter(
     social: {
       display: "inline-block",
       marginLeft: "50px",
-      marginTop: "15px",
+      marginTop: "13px",
       float: "left"
     },
 
     menu_items: {
       display: "inline-block",
       float: "right",
-      marginTop: "15px"
+      marginTop: "20px"
     },
 
     menu_item: {

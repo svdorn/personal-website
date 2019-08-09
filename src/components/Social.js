@@ -18,13 +18,17 @@ function Social({ styles }) {
     <div {...css(styles.container)}>
       {icons.map(icon => (
         <a
-          {...css(styles.image)}
+          key={icon.name}
           href={icon.href}
           target="_blank"
           rel="noopener noreferrer"
-          key={icon.name}
+          {...css(styles.image_clickable)}
         >
-          <img src={`/images/social/${icon.name}.png`} alt={icon.name} />
+          <img
+            src={`/images/social/${icon.name}.svg`}
+            alt={icon.name}
+            {...css(styles.image)}
+          />
         </a>
       ))}
     </div>
@@ -40,11 +44,15 @@ export default withStyles(() => ({
     display: "inline-block"
   },
 
-  image: {
+  image_clickable: {
     margin: "0 5px",
     opacity: "0.4",
     ":hover": {
       opacity: "0.6"
     }
+  },
+
+  image: {
+    height: "34px"
   }
 }))(Social);
