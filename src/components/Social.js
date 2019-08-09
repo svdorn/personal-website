@@ -21,6 +21,7 @@ function Social({ styles }) {
           {...css(styles.image)}
           href={icon.href}
           target="_blank"
+          rel="noopener noreferrer"
           key={icon.name}
         >
           <img src={`/images/social/${icon.name}.png`} alt={icon.name} />
