@@ -28,11 +28,7 @@ Social.propTypes = {
 
 export default withStyles(() => ({
   container: {
-    display: "inline-block",
-    marginLeft: "50px",
-    marginTop: "5px",
-    float: "left",
-    alignItems: "center"
+    display: "inline-block"
   },
 
   image: {

@@ -9,6 +9,9 @@
     "react": "^16.8.6",
     "react-dates": "^20.2.5",
     "react-dom": "^16.8.6",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
+    "react-router-scroll-top": "^0.2.1",
     "react-scripts": "3.0.1",
     "react-with-styles": "^3.2.3",
     "react-with-styles-interface-aphrodite": "^5.0.1"
