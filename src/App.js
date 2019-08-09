@@ -1,8 +1,17 @@
 import React from "react";
-import "./App.css";
+import Header from "./components/Header";
+import { css, withStyles } from "./withStyles";
 
-function App() {
-  return <div className="App" />;
+function App({ styles }) {
+  return (
+    <div {...css(styles.container)}>
+      <Header />
+    </div>
+  );
 }
 
-export default App;
+export default withStyles(() => ({
+  container: {
+    textAlign: "center"
+  }
+}))(App);

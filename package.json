@@ -1,13 +1,17 @@
 {
-  "name": "react-gh-pages",
+  "name": "personal-website",
   "homepage": "http://svdorn.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.3.1",
+    "aphrodite": "^2.3.1",
     "react": "^16.8.6",
+    "react-dates": "^20.2.5",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "react-with-styles": "^3.2.3",
+    "react-with-styles-interface-aphrodite": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
