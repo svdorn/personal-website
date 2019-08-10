@@ -98,6 +98,9 @@ class Home extends React.Component {
             <Social />
           </div>
         </section>
+        <section id="entrepreneur" {...css(styles.entrepreneur)}>
+          Entrepreneurship
+        </section>
       </div>
     );
   }
@@ -220,5 +223,10 @@ export default withStyles(({ color }) => ({
 
   button_link: {
     textDecoration: "none"
+  },
+
+  entrepreneur: {
+    position: "relative",
+    padding: "100px"
   }
 }))(Home);

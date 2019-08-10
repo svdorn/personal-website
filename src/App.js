@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import ScrollToTop from "react-router-scroll-top";
 // import components
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 // import pages
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -24,6 +25,7 @@ function App({ styles }) {
           <Route path="/stocks" component={Stocks} />
           <Route path="/tech" component={Tech} />
         </div>
+        <Footer />
       </ScrollToTop>
     </Router>
   );
