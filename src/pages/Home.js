@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Typed from "typed.js";
 import Button from "../components/Button";
+import Social from "../components/Social";
 import { css, withStyles } from "../withStyles";
 
 const people = [
@@ -84,6 +85,9 @@ class Home extends React.Component {
               </div>
             ))}
           </div>
+          <div {...css(styles.social)}>
+            <Social />
+          </div>
         </section>
       </div>
     );
@@ -114,7 +118,7 @@ export default withStyles(({ color }) => ({
   icons: {
     position: "absolute",
     color: "white",
-    bottom: "10%",
+    bottom: "15%",
     right: "0",
     left: "0",
     marginLeft: "auto",
@@ -146,5 +150,14 @@ export default withStyles(({ color }) => ({
   typed: {
     display: "inline-block",
     verticalAlign: "middle"
+  },
+
+  social: {
+    position: "absolute",
+    bottom: "4%",
+    right: "0",
+    left: "0",
+    marginLeft: "auto",
+    marginRight: "auto"
   }
 }))(Home);
