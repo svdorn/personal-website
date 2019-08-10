@@ -18,7 +18,7 @@ const people = [
   },
   {
     name: "jfk",
-    description: "See how to operate in the free market.",
+    description: "See how I operate in the free market.",
     button: "View Stocks"
   }
 ];
@@ -33,9 +33,10 @@ class Home extends React.Component {
   componentDidMount() {
     // strings that show up in the typer
     const typedStrings = [
-      "hello my name is <b>Stephen Dorn</b>",
+      "Hello, World!",
+      "my name is <b>Stephen Dorn</b>",
       "i am a computer scientist",
-      "stock market enthusiest",
+      "stock market enthusiast",
       "and entrepreneur"
     ];
 
@@ -77,11 +78,13 @@ class Home extends React.Component {
                   {...css(styles.icon_img)}
                 />
                 <br />
-                <Button
-                  text={icon.button}
-                  colors={["white"]}
-                  textColor={["#f46a54"]}
-                />
+                <div {...css(styles.button)}>
+                  <Button
+                    text={icon.button}
+                    colors={["white"]}
+                    textColor={["#f46a54"]}
+                  />
+                </div>
               </div>
             ))}
           </div>
@@ -104,7 +107,14 @@ export default withStyles(({ color }) => ({
   },
   intro: {
     backgroundColor: color.primary,
-    minHeight: "calc(100vh)"
+    height: "calc(100vh)",
+    minHeight: "600px",
+    "@media (max-width: 1000px)": {
+      height: "700px"
+    },
+    "@media (max-width: 500px)": {
+      height: "750px"
+    }
   },
 
   typed_container: {
@@ -112,7 +122,15 @@ export default withStyles(({ color }) => ({
     paddingTop: "15%",
     fontWeight: "800px",
     fontSize: "44px",
-    color: "white"
+    color: "white",
+    "@media (max-width: 1000px)": {
+      paddingTop: "150px",
+      fontSize: "32px"
+    },
+    "@media (max-width: 500px)": {
+      paddingTop: "150px",
+      fontSize: "25px"
+    }
   },
 
   icons: {
@@ -122,29 +140,50 @@ export default withStyles(({ color }) => ({
     right: "0",
     left: "0",
     marginLeft: "auto",
-    marginRight: "auto"
+    marginRight: "auto",
+    "@media (max-width: 1000px)": {
+      position: "relative",
+      paddingTop: "50px",
+      bottom: "auto"
+    }
   },
 
   icon: {
     display: "inline-block",
-    padding: "0 30px"
+    padding: "0 30px",
+    "@media (max-width: 1000px)": {
+      padding: "10px 20px"
+    }
   },
 
   icon_img: {
     padding: "10px 0",
-    height: "120px"
+    height: "120px",
+    "@media (max-width: 1000px)": {
+      height: "70px"
+    }
   },
 
   description: {
     fontSize: "18px",
-    fontWeight: "600"
+    fontWeight: "600",
+    "@media (max-width: 1000px)": {
+      fontSize: "15px"
+    }
   },
 
   terminal: {
     display: "inline-block",
     verticalAlign: "middle",
     height: "60px",
-    paddingRight: "30px"
+    paddingRight: "30px",
+    "@media (max-width: 1000px)": {
+      height: "40px",
+      paddingRight: "15px"
+    },
+    "@media (max-width: 500px)": {
+      height: "30px"
+    }
   },
 
   typed: {
@@ -158,6 +197,18 @@ export default withStyles(({ color }) => ({
     right: "0",
     left: "0",
     marginLeft: "auto",
-    marginRight: "auto"
+    marginRight: "auto",
+    "@media (max-width: 1000px)": {
+      position: "relative",
+      bottom: "auto",
+      paddingTop: "20px"
+    }
+  },
+
+  button: {
+    display: "block",
+    "@media (max-width: 1000px)": {
+      display: "none"
+    }
   }
 }))(Home);

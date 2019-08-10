@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Social from "./Social";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 import { linkIsActive } from "../miscFunctions";
@@ -26,9 +25,6 @@ class Header extends React.Component {
             alt="Terminal"
           />
         </Link>
-        <div {...css(styles.social)}>
-          <Social />
-        </div>
         <div {...css(styles.menu_items)}>
           {menuItems.map(item => (
             <Link
