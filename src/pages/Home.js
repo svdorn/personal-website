@@ -99,7 +99,7 @@ class Home extends React.Component {
           </div>
         </section>
         <section id="entrepreneur" {...css(styles.entrepreneur)}>
-          <div {...css(styles.entrepreneur_company)}>
+          <div {...css(styles.entrepreneur_moonshot)}>
             <div {...css(styles.company_logo)}>
               <img
                 src="/images/moonshot-insights.png"
@@ -142,11 +142,11 @@ class Home extends React.Component {
               </div>
             </div>
           </div>
-          <div {...css(styles.entrepreneur_company)}>
+          <div {...css(styles.entrepreneur_paws)}>
             <div {...css(styles.paws_description)}>
               <h1>Senior Paws Sanctuary</h1>
               <h3 {...css(styles.company_title)}>
-                Co-founder & Software Developer
+                Co-founder & Website Developer
               </h3>
               <p>
                 I am the Co-founder at Senior Paws Sanctuary which is a
@@ -338,11 +338,18 @@ export default withStyles(({ color }) => ({
     color: color.black
   },
 
-  entrepreneur_company: {
-    padding: "40px",
+  entrepreneur_moonshot: {
+    padding: "30px",
     display: "inline-flex",
     justifyContent: "space-around",
     flexWrap: "wrap"
+  },
+
+  entrepreneur_paws: {
+    padding: "30px",
+    display: "inline-flex",
+    justifyContent: "space-around",
+    flexWrap: "wrap-reverse"
   },
 
   company_logo: {
@@ -352,9 +359,27 @@ export default withStyles(({ color }) => ({
     borderRadius: "50%"
   },
 
-  moonshot_description: { margin: "auto 0 auto 60px", maxWidth: "500px" },
+  moonshot_description: {
+    margin: "auto 0 auto 60px",
+    maxWidth: "500px",
+    "@media (max-width: 940px)": {
+      margin: "auto 30px"
+    },
+    "@media (max-width: 600px)": {
+      margin: "auto 10px"
+    }
+  },
 
-  paws_description: { margin: "auto 60px auto 0", maxWidth: "500px" },
+  paws_description: {
+    margin: "auto 60px auto 0",
+    maxWidth: "500px",
+    "@media (max-width: 940px)": {
+      margin: "auto 30px"
+    },
+    "@media (max-width: 600px)": {
+      margin: "auto 10px"
+    }
+  },
 
   company_title: {
     marginTop: "-10px",
