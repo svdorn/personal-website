@@ -14,7 +14,8 @@
     "react-router-scroll-top": "^0.2.1",
     "react-scripts": "3.0.1",
     "react-with-styles": "^3.2.3",
-    "react-with-styles-interface-aphrodite": "^5.0.1"
+    "react-with-styles-interface-aphrodite": "^5.0.1",
+    "typed.js": "^2.0.10"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Icon from "@material-ui/core/Icon";
 import Social from "./Social";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
@@ -9,7 +8,8 @@ import { css, withStyles } from "../withStyles";
 
 const menuItems = [
   { name: "About", link: "/about" },
-  { name: "Experience", link: "/experience" },
+  { name: "Tech", link: "/tech" },
+  { name: "Stocks", link: "/stocks" },
   { name: "Contact", link: "/contact" }
 ];
 
@@ -20,7 +20,11 @@ class Header extends React.Component {
     return (
       <div {...css(styles.container)}>
         <Link to="/">
-          <Icon {...css(styles.icon)}>code</Icon>
+          <img
+            {...css(styles.terminal)}
+            src="/images/terminal.svg"
+            alt="Terminal"
+          />
         </Link>
         <div {...css(styles.social)}>
           <Social />
@@ -55,20 +59,16 @@ export default withRouter(
       padding: "10px 20px 20px"
     },
 
-    icon: {
+    terminal: {
       display: "inline-block",
       float: "left",
-      color: color.primary,
-      fontSize: "60px",
-      fontWeight: "1000",
-      alignItems: "center"
+      height: "50px"
     },
 
     social: {
       display: "inline-block",
-      marginLeft: "50px",
       marginTop: "13px",
-      float: "left"
+      float: "right"
     },
 
     menu_items: {
