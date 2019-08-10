@@ -28,9 +28,14 @@ const people = [
 ];
 
 const technologies = [
-  { name: "React", img: "/images/tech/react.png" },
-  { name: "Node", img: "/images/tech/node.png" },
-  { name: "Python", img: "/images/tech/python.png" }
+  { name: "React", img: "/images/tech/react.svg" },
+  { name: "Node", img: "/images/tech/javascript.png" },
+  { name: "Python", img: "/images/tech/python.svg" },
+  { name: "MongoDB", img: "/images/tech/mongo.svg" },
+  { name: "AWS", img: "/images/tech/aws.svg" },
+  { name: "GitHub", img: "/images/tech/github.svg" },
+  { name: "HTML", img: "/images/tech/html.svg" },
+  { name: "Docker", img: "/images/tech/docker.svg" }
 ];
 
 class Home extends React.Component {
@@ -411,7 +416,7 @@ export default withStyles(({ color }) => ({
   },
   /* tech section styling */
   tech: {
-    padding: "60px",
+    padding: "50px 0 60px",
     backgroundColor: color.secondary,
     color: color.primary
   },
@@ -422,7 +427,7 @@ export default withStyles(({ color }) => ({
 
   tech_logo_container: {
     display: "inline-block",
-    margin: "auto 10px",
+    margin: "10px",
     height: "80px",
     width: "80px",
     backgroundColor: color.primary,
