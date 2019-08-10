@@ -1,7 +1,26 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Typed from "typed.js";
+import Button from "../components/Button";
 import { css, withStyles } from "../withStyles";
+
+const people = [
+  {
+    name: "einstein",
+    description: "View my scientific use of computers.",
+    button: "View CS"
+  },
+  {
+    name: "jobs",
+    description: "Examine my entrepreneurial passion.",
+    button: "View Entrepreneurship"
+  },
+  {
+    name: "jfk",
+    description: "See how to operate in the free market.",
+    button: "View Stocks"
+  }
+];
 
 class Home extends React.Component {
   constructor(props) {
@@ -9,6 +28,7 @@ class Home extends React.Component {
 
     this.state = {};
   }
+
   componentDidMount() {
     // strings that show up in the typer
     const typedStrings = [
@@ -36,15 +56,35 @@ class Home extends React.Component {
     const { styles } = this.props;
 
     return (
-      <div>
-        <div {...css(styles.typed_container)}>
-          <img
-            src="/images/terminal.svg"
-            alt="Terminal"
-            {...css(styles.terminal)}
-          />
-          <span ref={this.typedRef} {...css(styles.typed)} />
-        </div>
+      <div {...css(styles.container)}>
+        <section id="intro" {...css(styles.intro)}>
+          <div {...css(styles.typed_container)}>
+            <img
+              src="/images/terminal-white.svg"
+              alt="Terminal"
+              {...css(styles.terminal)}
+            />
+            <span ref={this.typedRef} {...css(styles.typed)} />
+          </div>
+          <div {...css(styles.icons)}>
+            {people.map(icon => (
+              <div key={icon.name} {...css(styles.icon)}>
+                <div {...css(styles.description)}>{icon.description}</div>
+                <img
+                  src={`/images/people/${icon.name}.png`}
+                  alt={icon.name}
+                  {...css(styles.icon_img)}
+                />
+                <br />
+                <Button
+                  text={icon.button}
+                  colors={["white"]}
+                  textColor={["#f46a54"]}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
     );
   }
@@ -54,17 +94,52 @@ Home.propTypes = {
   styles: PropTypes.object.isRequired
 };
 
-export default withStyles(() => ({
+export default withStyles(({ color }) => ({
+  container: {
+    marginTop: "-80px"
+  },
+  intro: {
+    backgroundColor: color.primary,
+    minHeight: "calc(100vh)"
+  },
+
   typed_container: {
     verticalAlign: "middle",
+    paddingTop: "15%",
     fontWeight: "800px",
-    fontSize: "34px"
+    fontSize: "44px",
+    color: "white"
+  },
+
+  icons: {
+    position: "absolute",
+    color: "white",
+    bottom: "10%",
+    right: "0",
+    left: "0",
+    marginLeft: "auto",
+    marginRight: "auto"
+  },
+
+  icon: {
+    display: "inline-block",
+    padding: "0 30px"
+  },
+
+  icon_img: {
+    padding: "10px 0",
+    height: "120px"
+  },
+
+  description: {
+    fontSize: "18px",
+    fontWeight: "600"
   },
 
   terminal: {
     display: "inline-block",
     verticalAlign: "middle",
-    height: "50px",
+    height: "60px",
     paddingRight: "30px"
   },
 

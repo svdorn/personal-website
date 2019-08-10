@@ -16,7 +16,7 @@ function App({ styles }) {
   return (
     <Router>
       <ScrollToTop>
-        <Header />
+        <Header {...css(styles.header)} />
         <div {...css(styles.container)}>
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
@@ -33,10 +33,14 @@ App.propTypes = {
   styles: PropTypes.object.isRequired
 };
 
-export default withStyles(() => ({
+export default withStyles(({ color }) => ({
   container: {
     textAlign: "center",
     padding: "50px 0",
     font: "15px intercom-text,system-ui"
+  },
+
+  header: {
+    backgroundColor: "transparent"
   }
 }))(App);

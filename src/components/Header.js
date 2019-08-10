@@ -22,7 +22,7 @@ class Header extends React.Component {
         <Link to="/">
           <img
             {...css(styles.terminal)}
-            src="/images/terminal.svg"
+            src="/images/terminal-white.svg"
             alt="Terminal"
           />
         </Link>
@@ -81,7 +81,7 @@ export default withRouter(
       padding: "0 15px",
       textDecoration: "none",
       textAlign: "left",
-      color: "black",
+      color: "white",
       fontWeight: "600",
       opacity: "0.6",
       ":hover": {
