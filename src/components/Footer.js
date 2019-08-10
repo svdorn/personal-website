@@ -9,7 +9,7 @@ function Footer({ styles }) {
       <div {...css(styles.social)}>
         <Social />
       </div>
-      <div {...css(styles.copyright)}>Copyright &copy; 2019 Stephen Dorn</div>
+      <div {...css(styles.copyright)}>Copyright &copy;2019 Stephen Dorn</div>
     </div>
   );
 }
