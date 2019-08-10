@@ -100,11 +100,11 @@ class Home extends React.Component {
         </section>
         <section id="entrepreneur" {...css(styles.entrepreneur)}>
           <div {...css(styles.entrepreneur_moonshot)}>
-            <div {...css(styles.company_logo)}>
+            <div {...css(styles.company_logo_container)}>
               <img
                 src="/images/moonshot-insights.png"
                 alt="Moonshot Logo"
-                {...css(styles.logo)}
+                {...css(styles.company_logo)}
               />
             </div>
             <div {...css(styles.moonshot_description)}>
@@ -119,24 +119,24 @@ class Home extends React.Component {
                   href="https://moonshotinsights.io"
                   target="_blank"
                   rel="noopener noreferrer"
-                  {...css(styles.moonshot_icon_clickable)}
+                  {...css(styles.company_icon_clickable)}
                 >
                   <img
                     src="/images/link.svg"
                     alt="Moonshot Insights"
-                    {...css(styles.moonshot_icon)}
+                    {...css(styles.company_icon)}
                   />
                 </a>
                 <a
                   href="https://www.linkedin.com/company/18233111/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  {...css(styles.moonshot_icon_clickable)}
+                  {...css(styles.company_icon_clickable)}
                 >
                   <img
                     src="/images/social/linkedin.svg"
                     alt="Moonshot Insights LinkedIn"
-                    {...css(styles.moonshot_icon)}
+                    {...css(styles.company_icon)}
                   />
                 </a>
               </div>
@@ -149,41 +149,41 @@ class Home extends React.Component {
                 Co-founder & Website Developer
               </h3>
               <p>
-                I am the Co-founder at Senior Paws Sanctuary which is a
-                non-profit senior dog rescue located in Madison, WI.
+                I am the Co-founder and web developer at Senior Paws Sanctuary
+                which is a non-profit senior dog rescue located in Madison, WI.
               </p>
               <div>
                 <a
                   href="http://seniorpawssanctuarywi.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  {...css(styles.moonshot_icon_clickable)}
+                  {...css(styles.company_icon_clickable)}
                 >
                   <img
                     src="/images/link.svg"
                     alt="Senior Paws Sanctuary"
-                    {...css(styles.moonshot_icon)}
+                    {...css(styles.company_icon)}
                   />
                 </a>
                 <a
                   href="https://www.facebook.com/seniorpawssanctuarywi/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  {...css(styles.moonshot_icon_clickable)}
+                  {...css(styles.company_icon_clickable)}
                 >
                   <img
                     src="/images/social/facebook.svg"
                     alt="Senior Paws Sanctuary Facebook"
-                    {...css(styles.moonshot_icon)}
+                    {...css(styles.company_icon)}
                   />
                 </a>
               </div>
             </div>
-            <div {...css(styles.company_logo)}>
+            <div {...css(styles.company_logo_container)}>
               <img
                 src="/images/pawprint.png"
                 alt="Senior Paws Sanctuary Logo"
-                {...css(styles.logo)}
+                {...css(styles.company_logo)}
               />
             </div>
           </div>
@@ -352,7 +352,7 @@ export default withStyles(({ color }) => ({
     flexWrap: "wrap-reverse"
   },
 
-  company_logo: {
+  company_logo_container: {
     height: "220px",
     width: "220px",
     backgroundColor: color.primary,
@@ -387,12 +387,12 @@ export default withStyles(({ color }) => ({
     fontWeight: "600"
   },
 
-  logo: {
+  company_logo: {
     paddingTop: "60px",
     height: "100px"
   },
 
-  moonshot_icon_clickable: {
+  company_icon_clickable: {
     margin: "0 5px",
     opacity: "0.4",
     ":hover": {
@@ -400,7 +400,7 @@ export default withStyles(({ color }) => ({
     }
   },
 
-  moonshot_icon: {
+  company_icon: {
     height: "34px"
   }
 }))(Home);
