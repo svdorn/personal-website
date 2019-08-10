@@ -99,7 +99,103 @@ class Home extends React.Component {
           </div>
         </section>
         <section id="entrepreneur" {...css(styles.entrepreneur)}>
-          Entrepreneurship
+          <div {...css(styles.entrepreneur_company)}>
+            <div {...css(styles.company_logo)}>
+              <img
+                src="/images/moonshot-insights.png"
+                alt="Moonshot Logo"
+                {...css(styles.logo)}
+              />
+            </div>
+            <div {...css(styles.moonshot_description)}>
+              <h1>Moonshot Insights</h1>
+              <h3 {...css(styles.company_title)}>Co-founder & CTO</h3>
+              <p>
+                I am the Co-founder and CTO at Moonshot Insights where we help
+                companies build their company cultures through hiring.
+              </p>
+              <div>
+                <a
+                  href="https://moonshotinsights.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  {...css(styles.moonshot_icon_clickable)}
+                >
+                  <img
+                    src="/images/link.svg"
+                    alt="Moonshot Insights"
+                    {...css(styles.moonshot_icon)}
+                  />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/18233111/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  {...css(styles.moonshot_icon_clickable)}
+                >
+                  <img
+                    src="/images/social/linkedin.svg"
+                    alt="Moonshot Insights LinkedIn"
+                    {...css(styles.moonshot_icon)}
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div {...css(styles.entrepreneur_company)}>
+            <div {...css(styles.paws_description)}>
+              <h1>Senior Paws Sanctuary</h1>
+              <h3 {...css(styles.company_title)}>
+                Co-founder & Software Developer
+              </h3>
+              <p>
+                I am the Co-founder at Senior Paws Sanctuary which is a
+                non-profit senior dog rescue located in Madison, WI.
+              </p>
+              <div>
+                <a
+                  href="http://seniorpawssanctuarywi.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  {...css(styles.moonshot_icon_clickable)}
+                >
+                  <img
+                    src="/images/link.svg"
+                    alt="Senior Paws Sanctuary"
+                    {...css(styles.moonshot_icon)}
+                  />
+                </a>
+                <a
+                  href="https://www.facebook.com/seniorpawssanctuarywi/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  {...css(styles.moonshot_icon_clickable)}
+                >
+                  <img
+                    src="/images/social/facebook.svg"
+                    alt="Senior Paws Sanctuary Facebook"
+                    {...css(styles.moonshot_icon)}
+                  />
+                </a>
+              </div>
+            </div>
+            <div {...css(styles.company_logo)}>
+              <img
+                src="/images/pawprint.png"
+                alt="Senior Paws Sanctuary Logo"
+                {...css(styles.logo)}
+              />
+            </div>
+          </div>
+        </section>
+        <section id="tech" {...css(styles.tech)}>
+          Tech
+        </section>
+        <section id="stocks" {...css(styles.stocks)}>
+          Stocks
+        </section>
+        <section id="contact" {...css(styles.contact)}>
+          Contact
         </section>
       </div>
     );
@@ -225,8 +321,61 @@ export default withStyles(({ color }) => ({
     textDecoration: "none"
   },
 
-  entrepreneur: {
-    position: "relative",
+  tech: {
     padding: "100px"
+  },
+
+  stocks: {
+    padding: "100px"
+  },
+
+  contact: {
+    padding: "100px"
+  },
+
+  entrepreneur: {
+    padding: "40px",
+    color: color.black
+  },
+
+  entrepreneur_company: {
+    padding: "40px",
+    display: "inline-flex",
+    justifyContent: "space-around",
+    flexWrap: "wrap"
+  },
+
+  company_logo: {
+    height: "220px",
+    width: "220px",
+    backgroundColor: color.primary,
+    borderRadius: "50%"
+  },
+
+  moonshot_description: { margin: "auto 0 auto 60px", maxWidth: "500px" },
+
+  paws_description: { margin: "auto 60px auto 0", maxWidth: "500px" },
+
+  company_title: {
+    marginTop: "-10px",
+    marginBottom: "10px",
+    fontWeight: "600"
+  },
+
+  logo: {
+    paddingTop: "60px",
+    height: "100px"
+  },
+
+  moonshot_icon_clickable: {
+    margin: "0 5px",
+    opacity: "0.4",
+    ":hover": {
+      opacity: "0.6"
+    }
+  },
+
+  moonshot_icon: {
+    height: "34px"
   }
 }))(Home);
