@@ -27,6 +27,12 @@ const people = [
   }
 ];
 
+const technologies = [
+  { name: "React", img: "/images/tech/react.png" },
+  { name: "Node", img: "/images/tech/node.png" },
+  { name: "Python", img: "/images/tech/python.png" }
+];
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -189,7 +195,18 @@ class Home extends React.Component {
           </div>
         </section>
         <section id="tech" {...css(styles.tech)}>
-          Tech
+          <h1>Some technologies I love working with...</h1>
+          <div {...css(styles.tech_list)}>
+            {technologies.map(tech => (
+              <div key={tech.name} {...css(styles.tech_logo_container)}>
+                <img
+                  src={tech.img}
+                  alt={tech.name}
+                  {...css(styles.tech_logo)}
+                />
+              </div>
+            ))}
+          </div>
         </section>
         <section id="stocks" {...css(styles.stocks)}>
           Stocks
@@ -210,6 +227,7 @@ export default withStyles(({ color }) => ({
   container: {
     marginTop: "-80px"
   },
+  /* intro section styling */
   intro: {
     backgroundColor: color.primary,
     height: "calc(100vh)",
@@ -320,19 +338,7 @@ export default withStyles(({ color }) => ({
   button_link: {
     textDecoration: "none"
   },
-
-  tech: {
-    padding: "100px"
-  },
-
-  stocks: {
-    padding: "100px"
-  },
-
-  contact: {
-    padding: "100px"
-  },
-
+  /* entrepreneur styling */
   entrepreneur: {
     padding: "40px",
     color: color.black
@@ -402,5 +408,37 @@ export default withStyles(({ color }) => ({
 
   company_icon: {
     height: "34px"
+  },
+  /* tech section styling */
+  tech: {
+    padding: "60px",
+    backgroundColor: color.secondary,
+    color: color.primary
+  },
+
+  tech_list: {
+    padding: "20px 0"
+  },
+
+  tech_logo_container: {
+    display: "inline-block",
+    margin: "auto 10px",
+    height: "80px",
+    width: "80px",
+    backgroundColor: color.primary,
+    borderRadius: "50%"
+  },
+
+  tech_logo: {
+    paddingTop: "15px",
+    height: "50px"
+  },
+  /* stocks section styling */
+  stocks: {
+    padding: "100px"
+  },
+  /* contact section styling */
+  contact: {
+    padding: "100px"
   }
 }))(Home);
