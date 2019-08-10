@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Typed from "typed.js";
 import Button from "../components/Button";
+import { Link } from "react-router-dom";
 import Social from "../components/Social";
 import { css, withStyles } from "../withStyles";
 
@@ -9,17 +10,20 @@ const people = [
   {
     name: "einstein",
     description: "View my scientific use of computers.",
-    button: "View CS"
+    button: "View Projects",
+    link: "/tech"
   },
   {
     name: "jobs",
     description: "Examine my entrepreneurial passion.",
-    button: "View Entrepreneurship"
+    button: "View Entrepreneurship",
+    link: "/about"
   },
   {
     name: "jfk",
     description: "See how I operate in the free market.",
-    button: "View Stocks"
+    button: "View Stocks",
+    link: "/stocks"
   }
 ];
 
@@ -79,11 +83,13 @@ class Home extends React.Component {
                 />
                 <br />
                 <div {...css(styles.button)}>
-                  <Button
-                    text={icon.button}
-                    colors={["white"]}
-                    textColor={["#f46a54"]}
-                  />
+                  <Link to={icon.link} {...css(styles.button_link)}>
+                    <Button
+                      text={icon.button}
+                      colors={["white"]}
+                      textColor={["#f46a54"]}
+                    />
+                  </Link>
                 </div>
               </div>
             ))}
@@ -210,5 +216,9 @@ export default withStyles(({ color }) => ({
     "@media (max-width: 1000px)": {
       display: "none"
     }
+  },
+
+  button_link: {
+    textDecoration: "none"
   }
 }))(Home);
