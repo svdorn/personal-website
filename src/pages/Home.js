@@ -234,8 +234,8 @@ class Home extends React.Component {
             weekend to talk stocks and strategies with him. At 15, I built my
             first trading strategy and began to trade stocks with my own money.
             Since then I've been trading stocks and sharing my love of investing
-            with others by being President of the Society of Personal
-            Investments in college.
+            with others. I was President of the Society of Personal Investments
+            in college at UW-Madison.
           </p>
           <div {...css(styles.stocks_list)}>
             <h2>Some of my favorite stocks...</h2>
