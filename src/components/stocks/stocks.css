@@ -1,0 +1,51 @@
+.collapse-box {
+  display: flex;
+  vertical-align: top;
+  --box-width: 250px;
+  width: var(--box-width);
+  --box-color: white;
+  background-color: var(--box-color) !important;
+  cursor: pointer;
+}
+
+.portfolio-box {
+  display: flex;
+  vertical-align: top;
+  --box-width: 130px;
+  width: var(--box-width);
+  --box-color: white;
+  background-color: var(--box-color);
+  cursor: pointer;
+}
+
+.box {
+  padding: 30px 20px 30px 20px;
+  text-align: left;
+}
+.box > h3 {
+  margin: 0 auto 20px auto;
+}
+.box > h5 {
+  height: 45px;
+  margin: 0;
+}
+
+.featured-stocks-list {
+}
+.featured-stocks-list > div {
+  display: inline-flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.featured-stocks-list > div > a {
+  margin: 20px;
+}
+
+.price {
+  font-size: 18px;
+}
+.volume {
+  font-size: 12px;
+  margin-top: 10px;
+  color: black;
+}

@@ -1,6 +1,7 @@
 .box-container {
   --outline-width: 2px;
   --scale-time: 200ms;
+  --standard-shadow: 3px 2px 13px 1px #00000021;
 
   box-shadow: var(--standard-shadow);
   transition: box-shadow calc(var(--scale-time) * 2);

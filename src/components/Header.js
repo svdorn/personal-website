@@ -6,10 +6,10 @@ import { linkIsActive } from "../miscFunctions";
 import { css, withStyles } from "../withStyles";
 
 const menuItems = [
-  { name: "About", link: "/about" },
-  { name: "Tech", link: "/tech" },
-  { name: "Stocks", link: "/stocks" },
-  { name: "Contact", link: "/contact" }
+  { name: "About", link: "#about" },
+  { name: "Tech", link: "#tech" },
+  { name: "Stocks", link: "#stocks" },
+  { name: "Contact", link: "#contact" }
 ];
 
 class Header extends React.Component {
@@ -17,7 +17,7 @@ class Header extends React.Component {
     const { location, styles } = this.props;
 
     return (
-      <div {...css(styles.container)}>
+      <nav {...css(styles.container)}>
         <Link to="/">
           <img
             {...css(styles.terminal)}
@@ -27,19 +27,19 @@ class Header extends React.Component {
         </Link>
         <div {...css(styles.menu_items)}>
           {menuItems.map(item => (
-            <Link
+            <a
               key={item.name}
-              to={item.link}
+              href={item.link}
               {...css(
                 styles.menu_item,
                 linkIsActive(item.link, location) && styles.link_bold
               )}
             >
               {item.name}
-            </Link>
+            </a>
           ))}
         </div>
-      </div>
+      </nav>
     );
   }
 }

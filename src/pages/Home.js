@@ -4,6 +4,8 @@ import Typed from "typed.js";
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
 import Social from "../components/Social";
+import StocksList from "../components/stocks/StocksList";
+import { getPortfolioStocks } from "../api";
 import { css, withStyles } from "../withStyles";
 
 const people = [
@@ -42,7 +44,9 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      stocks: []
+    };
   }
 
   componentDidMount() {
@@ -64,13 +68,22 @@ class Home extends React.Component {
       loopCount: Infinity,
       backDelay: 1000
     };
-    this.setState({ typed: new Typed(this.typedSpan, options) });
+
+    getPortfolioStocks()
+      .then(res => {
+        this.setState({
+          typed: new Typed(this.typedSpan, options),
+          stocks: res["Stock Quotes"]
+        });
+      })
+      .catch(err => console.log("Error getting stock data: ", err));
   }
 
   typedRef = typedSpan => (this.typedSpan = typedSpan);
 
   render() {
     const { styles } = this.props;
+    const { stocks } = this.state;
 
     return (
       <div {...css(styles.container)}>
@@ -109,7 +122,7 @@ class Home extends React.Component {
             <Social />
           </div>
         </section>
-        <section id="entrepreneur" {...css(styles.entrepreneur)}>
+        <section id="about" {...css(styles.entrepreneur)}>
           <div {...css(styles.entrepreneur_moonshot)}>
             <div {...css(styles.company_logo_container)}>
               <img
@@ -214,7 +227,20 @@ class Home extends React.Component {
           </div>
         </section>
         <section id="stocks" {...css(styles.stocks)}>
-          Stocks
+          <h1>Why I Love Investing</h1>
+          <p {...css(styles.stocks_paragraph)}>
+            When I was 15 years old, I first learned about the stock market from
+            my Grandpa. That summer, I would go over to his apartment every
+            weekend to talk stocks and strategies with him. At 15, I built my
+            first trading strategy and began to trade stocks with my own money.
+            Since then I've been trading stocks and sharing my love of investing
+            with others by being President of the Society of Personal
+            Investments in college.
+          </p>
+          <div {...css(styles.stocks_list)}>
+            <h2>Some of my favorite stocks...</h2>
+            <StocksList stocks={stocks} />
+          </div>
         </section>
         <section id="contact" {...css(styles.contact)}>
           Contact
@@ -345,7 +371,7 @@ export default withStyles(({ color }) => ({
   },
   /* entrepreneur styling */
   entrepreneur: {
-    padding: "40px",
+    padding: "40px 0",
     color: color.black
   },
 
@@ -440,7 +466,22 @@ export default withStyles(({ color }) => ({
   },
   /* stocks section styling */
   stocks: {
-    padding: "100px"
+    padding: "60px 0"
+  },
+
+  stocks_paragraph: {
+    margin: "auto",
+    width: "92%",
+    maxWidth: "800px",
+    fontSize: "16px",
+    marginBottom: "60px"
+  },
+
+  stocks_list: {
+    color: color.primary,
+    backgroundColor: color.secondary,
+    padding: "60px 0",
+    width: "100%"
   },
   /* contact section styling */
   contact: {

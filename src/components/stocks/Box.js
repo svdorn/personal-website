@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./Box.css";
+import "./box.css";
 
 const lineTypes = {
   left: ["L-top", "L-left", "L-right", "L-bottom"],
@@ -9,9 +9,9 @@ const lineTypes = {
   center: ["C-top", "C-left", "C-right", "C-bottom-left", "C-bottom-right"]
 };
 
-function CollapseBox({ style, className, children, placement, color }) {
+function Box({ className, children, placement, color }) {
   return (
-    <div className={"box-container " + className || ""} style={style || {}}>
+    <div className={"box-container " + className || ""}>
       <div className="borders">
         {lineTypes[placement].map(lineType => (
           <div
@@ -26,10 +26,10 @@ function CollapseBox({ style, className, children, placement, color }) {
   );
 }
 
-CollapseBox.propTypes = {
+Box.propTypes = {
   children: PropTypes.object.isRequired,
   color: PropTypes.string.isRequired,
   placement: PropTypes.string.isRequired
 };
 
-export default CollapseBox;
+export default Box;
