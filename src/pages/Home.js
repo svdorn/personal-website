@@ -50,7 +50,6 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    analytics.page("Home");
     // strings that show up in the typer
     const typedStrings = [
       "Hello, World!",
