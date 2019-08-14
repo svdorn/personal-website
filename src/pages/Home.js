@@ -41,6 +41,18 @@ const technologies = [
   { name: "Docker", img: "/images/tech/docker.svg" }
 ];
 
+const moonshotChips = [
+  "React",
+  "Node",
+  "Express.js",
+  "MongoDB",
+  "AWS",
+  "HTML",
+  "CSS"
+];
+
+const seniorPawsChips = ["React", "AWS", "JavaScript", "HTML", "CSS"];
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -142,13 +154,13 @@ class Home extends React.Component {
                 companies build their company cultures through hiring.
               </p>
               <div>
-                <Chip label="React" {...css(styles.chip)} />
-                <Chip label="Node" {...css(styles.chip)} />
-                <Chip label="Express.js" {...css(styles.chip)} />
-                <Chip label="MongoDB" {...css(styles.chip)} />
-                <Chip label="AWS" {...css(styles.chip)} />
-                <Chip label="HTML" {...css(styles.chip)} />
-                <Chip label="CSS" {...css(styles.chip)} />
+                {moonshotChips.map(chip => (
+                  <Chip
+                    key={`moonshotChip${chip}`}
+                    label={chip}
+                    {...css(styles.chip)}
+                  />
+                ))}
               </div>
               <div>
                 <a
@@ -189,11 +201,13 @@ class Home extends React.Component {
                 which is a non-profit senior dog rescue located in Madison, WI.
               </p>
               <div>
-                <Chip label="React" {...css(styles.chip)} />
-                <Chip label="AWS" {...css(styles.chip)} />
-                <Chip label="JavaScript" {...css(styles.chip)} />
-                <Chip label="HTML" {...css(styles.chip)} />
-                <Chip label="CSS" {...css(styles.chip)} />
+                {seniorPawsChips.map(chip => (
+                  <Chip
+                    key={`seniorPawsChip${chip}`}
+                    label={chip}
+                    {...css(styles.chip)}
+                  />
+                ))}
               </div>
               <div>
                 <a
@@ -373,7 +387,7 @@ export default withStyles(({ color }) => ({
     height: "60px",
     paddingRight: "30px",
     "@media (max-width: 1000px)": {
-      height: "40px",
+      height: "45px",
       paddingRight: "15px"
     },
     "@media (max-width: 500px)": {
