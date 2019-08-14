@@ -29,6 +29,7 @@ class Header extends React.Component {
           {menuItems.map(item => (
             <a
               key={item.name}
+              data-scroll
               href={item.link}
               {...css(
                 styles.menu_item,

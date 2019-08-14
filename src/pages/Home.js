@@ -235,7 +235,13 @@ class Home extends React.Component {
             first trading strategy and began to trade stocks with my own money.
             Since then I've been trading stocks and sharing my love of investing
             with others. I was President of the Society of Personal Investments
-            in college at UW-Madison.
+            in college at UW-Madison and I share my love of investing by
+            investing money for my friends.
+            <br />
+            <br />I follow in the footsteps of my two favorite investors: Warren
+            Buffet and Chamath Palihapitiya by focusing on long-term investments
+            in premium businesses. I have a heavy focus on the tech sector
+            because that is where my area of expertise is.
           </p>
           <div {...css(styles.stocks_list)}>
             <h2>Some of my favorite stocks...</h2>
@@ -474,7 +480,8 @@ export default withStyles(({ color }) => ({
     width: "92%",
     maxWidth: "800px",
     fontSize: "16px",
-    marginBottom: "60px"
+    marginBottom: "80px",
+    textAlign: "left"
   },
 
   stocks_list: {
