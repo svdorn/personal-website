@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import Typed from "typed.js";
 import Button from "../components/Button";
-import { Link } from "react-router-dom";
 import Social from "../components/Social";
 import StocksList from "../components/stocks/StocksList";
 import { getPortfolioStocks } from "../api";
@@ -13,19 +12,19 @@ const people = [
     name: "einstein",
     description: "View my scientific use of computers.",
     button: "View Projects",
-    link: "/tech"
+    link: "#tech"
   },
   {
     name: "jobs",
     description: "Examine my entrepreneurial passion.",
     button: "View Entrepreneurship",
-    link: "/about"
+    link: "#about"
   },
   {
     name: "jfk",
     description: "See how I operate in the free market.",
     button: "View Stocks",
-    link: "/stocks"
+    link: "#stocks"
   }
 ];
 
@@ -69,14 +68,15 @@ class Home extends React.Component {
       backDelay: 1000
     };
 
-    getPortfolioStocks()
-      .then(res => {
-        this.setState({
-          typed: new Typed(this.typedSpan, options),
-          stocks: res["Stock Quotes"]
-        });
-      })
-      .catch(err => console.log("Error getting stock data: ", err));
+    this.setState({ typed: new Typed(this.typedSpan, options) }, () => {
+      getPortfolioStocks()
+        .then(res => {
+          this.setState({
+            stocks: res["Stock Quotes"]
+          });
+        })
+        .catch(err => console.log("Error getting stock data: ", err));
+    });
   }
 
   typedRef = typedSpan => (this.typedSpan = typedSpan);
@@ -107,13 +107,9 @@ class Home extends React.Component {
                 />
                 <br />
                 <div {...css(styles.button)}>
-                  <Link to={icon.link} {...css(styles.button_link)}>
-                    <Button
-                      text={icon.button}
-                      colors={["white"]}
-                      textColor={["#f46a54"]}
-                    />
-                  </Link>
+                  <a href={icon.link} {...css(styles.button_link)}>
+                    <Button text={icon.button} />
+                  </a>
                 </div>
               </div>
             ))}
@@ -233,15 +229,17 @@ class Home extends React.Component {
             my Grandpa. That summer, I would go over to his apartment every
             weekend to talk stocks and strategies with him. At 15, I built my
             first trading strategy and began to trade stocks with my own money.
-            Since then I've been trading stocks and sharing my love of investing
-            with others. I was President of the Society of Personal Investments
-            in college at UW-Madison and I share my love of investing by
-            investing money for my friends.
+            Since then I{"'"}ve been trading stocks and sharing my love of
+            investing with others. I was President of the Society of Personal
+            Investments in college at UW-Madison and I share my love of
+            investing by investing money for my friends.
             <br />
             <br />I follow in the footsteps of my two favorite investors: Warren
             Buffet and Chamath Palihapitiya by focusing on long-term investments
             in premium businesses. I have a heavy focus on the tech sector
-            because that is where my area of expertise is.
+            because that is my area of expertise. I take a passive, long-term
+            approach and below are a few of my favorite stocks that I{"'"}m
+            holding for the long-term.
           </p>
           <div {...css(styles.stocks_list)}>
             <h2>Some of my favorite stocks...</h2>

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Social from "./Social";
+import Icon from "@material-ui/core/Icon";
 import { css, withStyles } from "../withStyles";
 
 function Footer({ styles }) {
@@ -9,7 +10,10 @@ function Footer({ styles }) {
       <div {...css(styles.social)}>
         <Social />
       </div>
-      <div {...css(styles.copyright)}>Copyright &copy;2019 Stephen Dorn</div>
+      <div {...css(styles.by_stephen)}>
+        <Icon {...css(styles.icon)}>code</Icon> with{" "}
+        <Icon {...css(styles.icon)}>favorite</Icon> by Stephen Dorn
+      </div>
     </div>
   );
 }
@@ -29,7 +33,11 @@ export default withStyles(({ color }) => ({
     padding: "20px 0 10px"
   },
 
-  copyright: {
+  by_stephen: {
     color: "white"
+  },
+
+  icon: {
+    verticalAlign: "middle"
   }
 }))(Footer);

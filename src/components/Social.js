@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 import { css, withStyles } from "../withStyles";
 
 const icons = [
-  { name: "twitter", href: "" },
   {
     name: "linkedin",
     href: "https://www.linkedin.com/in/stephen-dorn-149055a3/"
   },
   { name: "github", href: "https://github.com/svdorn" },
-  { name: "facebook", href: "https://www.facebook.com/stephen.dorn.1" },
   { name: "instagram", href: "https://www.instagram.com/stephen.dorn/" },
+  { name: "facebook", href: "https://www.facebook.com/stephen.dorn.1" },
+  { name: "twitter", href: "https://twitter.com/StephenDorn7" },
   { name: "email", href: "mailto:steve@moonshotinsights.com" }
 ];
 
