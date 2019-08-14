@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Typed from "typed.js";
 import Button from "../components/Button";
+import Chip from "@material-ui/core/Chip";
 import Icon from "@material-ui/core/Icon";
 import Social from "../components/Social";
 import StocksList from "../components/stocks/StocksList";
@@ -13,7 +14,7 @@ const people = [
     name: "einstein",
     description: "View my scientific use of computers.",
     button: "View Projects",
-    link: "#tech"
+    link: "https://github.com/svdorn"
   },
   {
     name: "jobs",
@@ -108,7 +109,12 @@ class Home extends React.Component {
                 />
                 <br />
                 <div {...css(styles.button)}>
-                  <a href={icon.link} {...css(styles.button_link)}>
+                  <a
+                    href={icon.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    {...css(styles.button_link)}
+                  >
                     <Button text={icon.button} />
                   </a>
                 </div>
@@ -135,6 +141,15 @@ class Home extends React.Component {
                 I am the Co-founder and CTO at Moonshot Insights where we help
                 companies build their company cultures through hiring.
               </p>
+              <div>
+                <Chip label="React" {...css(styles.chip)} />
+                <Chip label="Node" {...css(styles.chip)} />
+                <Chip label="Express.js" {...css(styles.chip)} />
+                <Chip label="MongoDB" {...css(styles.chip)} />
+                <Chip label="AWS" {...css(styles.chip)} />
+                <Chip label="HTML" {...css(styles.chip)} />
+                <Chip label="CSS" {...css(styles.chip)} />
+              </div>
               <div>
                 <a
                   href="https://moonshotinsights.io"
@@ -173,6 +188,13 @@ class Home extends React.Component {
                 I am the Co-founder and web developer at Senior Paws Sanctuary
                 which is a non-profit senior dog rescue located in Madison, WI.
               </p>
+              <div>
+                <Chip label="React" {...css(styles.chip)} />
+                <Chip label="AWS" {...css(styles.chip)} />
+                <Chip label="JavaScript" {...css(styles.chip)} />
+                <Chip label="HTML" {...css(styles.chip)} />
+                <Chip label="CSS" {...css(styles.chip)} />
+              </div>
               <div>
                 <a
                   href="http://seniorpawssanctuarywi.com/"
@@ -458,6 +480,12 @@ export default withStyles(({ color }) => ({
 
   company_icon: {
     height: "34px"
+  },
+
+  chip: {
+    backgroundColor: color.primary,
+    color: color.white,
+    margin: "auto 3px 10px 3px"
   },
   /* tech section styling */
   tech: {
