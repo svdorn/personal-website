@@ -9,9 +9,9 @@ const lineTypes = {
   center: ["C-top", "C-left", "C-right", "C-bottom-left", "C-bottom-right"]
 };
 
-function Box({ children, placement, color }) {
+function Box({ className, children, placement, color }) {
   return (
-    <div className="box-container">
+    <div className={"box-container " + className || ""}>
       <div className="borders">
         {lineTypes[placement].map(lineType => (
           <div
