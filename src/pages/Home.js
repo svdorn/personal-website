@@ -90,7 +90,7 @@ class Home extends React.Component {
         <section id="intro" {...css(styles.intro)}>
           <div {...css(styles.typed_container)}>
             <img
-              src="/images/terminal-white.svg"
+              src="/images/terminal.svg"
               alt="Terminal"
               {...css(styles.terminal)}
             />
@@ -122,7 +122,7 @@ class Home extends React.Component {
           <div {...css(styles.entrepreneur_moonshot)}>
             <div {...css(styles.company_logo_container)}>
               <img
-                src="/images/moonshot-insights.png"
+                src="/images/companies/moonshot-insights.png"
                 alt="Moonshot Logo"
                 {...css(styles.company_logo)}
               />
@@ -201,7 +201,7 @@ class Home extends React.Component {
             </div>
             <div {...css(styles.company_logo_container)}>
               <img
-                src="/images/pawprint.png"
+                src="/images/companies/pawprint.png"
                 alt="Senior Paws Sanctuary Logo"
                 {...css(styles.company_logo)}
               />

@@ -21,7 +21,7 @@ class Header extends React.Component {
         <Link to="/">
           <img
             {...css(styles.terminal)}
-            src="/images/terminal-white.svg"
+            src="/images/terminal.svg"
             alt="Terminal"
           />
         </Link>
