@@ -2,8 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Stock from "./Stock";
 import { numberWithCommas } from "../../miscFunctions";
-
-import "./stocks.css";
+import { css, withStyles } from "../../withStyles";
 
 const stocksList = [
   {
@@ -26,7 +25,7 @@ const stocksList = [
   }
 ];
 
-function StocksList({ stocks }) {
+function StocksList({ stocks, styles }) {
   for (let i = 0; i < stocks.length; i++) {
     let stock = stocks[i];
     const found = stocksList.find(
@@ -40,8 +39,8 @@ function StocksList({ stocks }) {
   }
 
   return (
-    <div className="featured-stocks-list">
-      <div>
+    <div>
+      <div {...css(styles.container)}>
         {stocksList.map(stock => (
           <Stock key={stock.ticker} stock={stock} />
         ))}
@@ -51,7 +50,14 @@ function StocksList({ stocks }) {
 }
 
 StocksList.propTypes = {
-  stocks: PropTypes.array.isRequired
+  stocks: PropTypes.array.isRequired,
+  styles: PropTypes.object.isRequired
 };
 
-export default StocksList;
+export default withStyles(() => ({
+  container: {
+    display: "inline-flex",
+    justifyContent: "space-evenly",
+    flexWrap: "wrap"
+  }
+}))(StocksList);
