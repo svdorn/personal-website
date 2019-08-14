@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { BrowserRouter as Router, Route } from "react-router-dom";
 // import components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -10,13 +9,13 @@ import { css, withStyles } from "./withStyles";
 
 function App({ styles }) {
   return (
-    <Router>
+    <div>
       <Header {...css(styles.header)} />
       <div {...css(styles.container)}>
-        <Route path="/" component={Home} />
+        <Home />
       </div>
       <Footer />
-    </Router>
+    </div>
   );
 }
 

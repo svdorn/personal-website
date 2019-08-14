@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Social from "./Social";
 import Icon from "@material-ui/core/Icon";
+import Social from "./Social";
 import { css, withStyles } from "../withStyles";
 
 function Footer({ styles }) {

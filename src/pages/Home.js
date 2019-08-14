@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Typed from "typed.js";
 import Button from "../components/Button";
+import Icon from "@material-ui/core/Icon";
 import Social from "../components/Social";
 import StocksList from "../components/stocks/StocksList";
 import { getPortfolioStocks } from "../api";
@@ -247,7 +248,21 @@ class Home extends React.Component {
           </div>
         </section>
         <section id="contact" {...css(styles.contact)}>
-          Contact
+          <h1>Contact Me!</h1>
+          <p {...css(styles.contact_paragraph)}>
+            Please feel free to contact me for any reason, I{"'"}d love to talk!
+          </p>
+          <div {...css(styles.contact_img_container)}>
+            <img
+              src="/images/people/einstein.png"
+              alt="Stephen Dorn"
+              {...css(styles.contact_img)}
+            />
+          </div>
+          <div>
+            <Icon {...css(styles.contact_icon)}>email</Icon>{" "}
+            steve@moonshotinsights.com
+          </div>
         </section>
       </div>
     );
@@ -490,6 +505,31 @@ export default withStyles(({ color }) => ({
   },
   /* contact section styling */
   contact: {
-    padding: "100px"
+    padding: "60px 0"
+  },
+
+  contact_paragraph: {
+    margin: "auto",
+    width: "92%"
+  },
+
+  contact_img_container: {
+    display: "inline-block",
+    margin: "10px",
+    height: "130px",
+    width: "130px",
+    backgroundColor: color.primary,
+    borderRadius: "50%"
+  },
+
+  contact_img: {
+    paddingTop: "15px",
+    height: "90px"
+  },
+
+  contact_icon: {
+    color: color.primary,
+    verticalAlign: "middle",
+    marginRight: "5px"
   }
 }))(Home);
