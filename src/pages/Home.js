@@ -547,7 +547,7 @@ export default withStyles(({ color }) => ({
   },
   /* contact section styling */
   contact: {
-    padding: "60px 0"
+    padding: "20px 0 60px 0"
   },
 
   contact_paragraph: {
