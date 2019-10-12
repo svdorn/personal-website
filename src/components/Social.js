@@ -11,7 +11,7 @@ const icons = [
   { name: "instagram", href: "https://www.instagram.com/stephen.dorn/" },
   { name: "facebook", href: "https://www.facebook.com/stephen.dorn.1" },
   { name: "twitter", href: "https://twitter.com/StephenDorn7" },
-  { name: "email", href: "mailto:steve@moonshotinsights.com" }
+  { name: "email", href: "mailto:stephen.dorn@orfium.com" }
 ];
 
 function Social({ styles }) {
