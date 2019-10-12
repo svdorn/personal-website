@@ -41,6 +41,8 @@ const technologies = [
   { name: "Docker", img: "/images/tech/docker.svg" }
 ];
 
+const orfiumChips = ["Python", "Pandas", "AWS", "Data Science", "Heroku"];
+
 const moonshotChips = [
   "React",
   "Node",
@@ -138,19 +140,66 @@ class Home extends React.Component {
           </div>
         </section>
         <section id="about" {...css(styles.entrepreneur)}>
-          <div {...css(styles.entrepreneur_moonshot)}>
+          <div {...css(styles.entrepreneur_orfium)}>
             <div {...css(styles.company_logo_container)}>
               <img
-                src="/images/companies/moonshot-insights.png"
-                alt="Moonshot Logo"
+                src="/images/companies/orfium.png"
+                alt="Orfium Logo"
                 {...css(styles.company_logo)}
               />
             </div>
-            <div {...css(styles.moonshot_description)}>
+            <div {...css(styles.left_description)}>
+              <h1>Orfium</h1>
+              <h3 {...css(styles.company_title)}>Software Engineer</h3>
+              <h4 {...css(styles.company_location)}>Malibu, CA</h4>
+              <p>
+                A music rights management platform offering technology solutions
+                for rights-holders.
+              </p>
+              <div>
+                {orfiumChips.map(chip => (
+                  <Chip
+                    key={`orfiumChips${chip}`}
+                    label={chip}
+                    {...css(styles.chip)}
+                  />
+                ))}
+              </div>
+              <div>
+                <a
+                  href="https://orfium.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  {...css(styles.company_icon_clickable)}
+                >
+                  <img
+                    src="/images/link.svg"
+                    alt="Orfium"
+                    {...css(styles.company_icon)}
+                  />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/orfium/about/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  {...css(styles.company_icon_clickable)}
+                >
+                  <img
+                    src="/images/social/linkedin.svg"
+                    alt="Orfium LinkedIn"
+                    {...css(styles.company_icon)}
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div {...css(styles.entrepreneur_moonshot)}>
+            <div {...css(styles.right_description)}>
               <h1>Moonshot Insights</h1>
               <h3 {...css(styles.company_title)}>Co-founder & CTO</h3>
+              <h4 {...css(styles.company_location)}>Los Angeles, CA</h4>
               <p>
-                I am the Co-founder and CTO at Moonshot Insights where we help
+                I was a Co-founder and CTO at Moonshot Insights where we help
                 companies build their company cultures through hiring.
               </p>
               <div>
@@ -189,13 +238,28 @@ class Home extends React.Component {
                 </a>
               </div>
             </div>
+            <div {...css(styles.company_logo_container)}>
+              <img
+                src="/images/companies/moonshot-insights.png"
+                alt="Moonshot Logo"
+                {...css(styles.company_logo)}
+              />
+            </div>
           </div>
           <div {...css(styles.entrepreneur_paws)}>
-            <div {...css(styles.paws_description)}>
+            <div {...css(styles.company_logo_container)}>
+              <img
+                src="/images/companies/pawprint.png"
+                alt="Senior Paws Sanctuary Logo"
+                {...css(styles.company_logo)}
+              />
+            </div>
+            <div {...css(styles.left_description)}>
               <h1>Senior Paws Sanctuary</h1>
               <h3 {...css(styles.company_title)}>
                 Co-founder & Website Developer
               </h3>
+              <h4 {...css(styles.company_location)}>Madison, WI</h4>
               <p>
                 I am the Co-founder and web developer at Senior Paws Sanctuary
                 which is a non-profit senior dog rescue located in Madison, WI.
@@ -235,13 +299,6 @@ class Home extends React.Component {
                   />
                 </a>
               </div>
-            </div>
-            <div {...css(styles.company_logo_container)}>
-              <img
-                src="/images/companies/pawprint.png"
-                alt="Senior Paws Sanctuary Logo"
-                {...css(styles.company_logo)}
-              />
             </div>
           </div>
         </section>
@@ -297,7 +354,7 @@ class Home extends React.Component {
           </div>
           <div>
             <Icon {...css(styles.contact_icon)}>email</Icon>{" "}
-            steve@moonshotinsights.com
+            stephen.dorn@orfium.com
           </div>
         </section>
       </div>
@@ -430,18 +487,25 @@ export default withStyles(({ color }) => ({
     color: color.black
   },
 
-  entrepreneur_moonshot: {
+  entrepreneur_orfium: {
     padding: "30px",
     display: "inline-flex",
     justifyContent: "space-around",
     flexWrap: "wrap"
   },
 
-  entrepreneur_paws: {
+  entrepreneur_moonshot: {
     padding: "30px",
     display: "inline-flex",
     justifyContent: "space-around",
     flexWrap: "wrap-reverse"
+  },
+
+  entrepreneur_paws: {
+    padding: "30px",
+    display: "inline-flex",
+    justifyContent: "space-around",
+    flexWrap: "wrap"
   },
 
   company_logo_container: {
@@ -451,7 +515,7 @@ export default withStyles(({ color }) => ({
     borderRadius: "50%"
   },
 
-  moonshot_description: {
+  left_description: {
     margin: "auto 0 auto 60px",
     maxWidth: "500px",
     "@media (max-width: 940px)": {
@@ -462,7 +526,7 @@ export default withStyles(({ color }) => ({
     }
   },
 
-  paws_description: {
+  right_description: {
     margin: "auto 60px auto 0",
     maxWidth: "500px",
     "@media (max-width: 940px)": {
@@ -474,7 +538,12 @@ export default withStyles(({ color }) => ({
   },
 
   company_title: {
-    marginTop: "-10px",
+    marginTop: "-17px",
+    fontWeight: "600"
+  },
+
+  company_location: {
+    marginTop: "-14px",
     marginBottom: "10px",
     fontWeight: "600"
   },
